@@ -207,7 +207,8 @@ def get_chat_response(user_input):
     response = requests.post(
         "http://localhost:1234/v1/chat/completions",
         headers={"Content-Type": "application/json"},
-        data=json.dumps(data)
+        data=json.dumps(data),
+        timeout=60
     )
 
     if response.status_code == 200:
